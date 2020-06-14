@@ -1,0 +1,14 @@
+default:
+  tags:
+    - shell-scripts
+
+job_for_build:
+  stage: build
+  script: 
+    - echo $CI_COMMIT_MESSAGE executed by $CI_RUNNER_DESCRIPTION
+
+job_for_test:
+  stage: test
+  script: 
+    - echo $CI_COMMIT_MESSAGE executed by $CI_RUNNER_DESCRIPTION
+
