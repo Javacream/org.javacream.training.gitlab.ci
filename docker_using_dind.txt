@@ -1,0 +1,5 @@
+docker run --rm -t -i -v /home/rainer/docker/volumes/gitlab-runner/config/docker_dind:/etc/gitlab-runner gitlab/gitlab-runner register  --non-interactive --url http://192.168.178.48/ --registration-token C2mspqtXzC6zncASViGz --executor "docker" --description "docker_dind" --tag-list "docker_dind" --docker-image "docker:19.03.11" --docker-privileged --docker-cert-path ""
+
+docker run -d --name gitlab-runner_docker_dind -v /var/run/docker.sock:/var/run/docker.sock -v /home/rainer/docker/volumes/gitlab-runner/config/docker_dind:/etc/gitlab-runner gitlab/gitlab-runner 
+
+

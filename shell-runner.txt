@@ -1,0 +1,5 @@
+docker run --rm -it -v /home/rainer/docker/volumes/gitlab-runner/config/shell:/etc/gitlab-runner gitlab/gitlab-runner register --non-interactive --url http://192.168.178.48/ --registration-token C2mspqtXzC6zncASViGz --executor "shell" --description "shell_executor" --tag-list "shell-scripts"
+
+# Start Shell Runner
+docker run -d --name gitlab-runner-shell -v /home/rainer/docker/volumes/gitlab-runner/config/shell:/etc/gitlab-runner gitlab/gitlab-runner
+

@@ -1,0 +1,5 @@
+docker run --rm -it -v /home/rainer/docker/volumes/gitlab-runner/config/docker_image:/etc/gitlab-runner gitlab/gitlab-runner register  --non-interactive --url http://192.168.178.48/ --registration-token C2mspqtXzC6zncASViGz --executor "docker" --description "docker_image_executor" --tag-list "docker_image" --docker-image "docker:19.03.11"
+
+# Start Image Runner
+docker run -d --name gitlab-runner_docker -v /home/rainer/docker/volumes/gitlab-runner/config/docker_image:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner
+

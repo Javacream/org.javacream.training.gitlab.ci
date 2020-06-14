@@ -1,0 +1,3 @@
+#Start GitLab
+docker  create --name gitlab -p 442:442 -p 80:80 -p 422:22 --hostname localhost -v gitlab_opt:/var/opt/gitlab -v gitlab_log:/var/log/gitlab -v gitlab_etc:/etc/gitlab gitlab/gitlab-ee
+
