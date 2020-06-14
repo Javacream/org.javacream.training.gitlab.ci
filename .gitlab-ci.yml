@@ -1,0 +1,7 @@
+stages:
+  - build
+
+docker-build:
+  stage: build
+  script:
+    - wget   
