@@ -1,2 +1,2 @@
-# Org.Javacream.Training.Gitlab.Ci
+# org.javacream.training.gitlab.ci
 
