@@ -11,7 +11,7 @@ variables:
 cache:
   paths:
     - .m2/repository/
-    - org.javacream.training.store.module/target/
+    - org.javacream.training.store.web/target/
 
 build:
   stage: build
@@ -27,8 +27,8 @@ deploy:
   stage: deploy
   artifacts:
     paths:
-      - org.javacream.training.store.module/target/*.jar
+      - org.javacream.training.store.web/target/*.jar
   script:
     - mvn $MAVEN_CLI_OPTS -Dmaven.test.skip deploy
   only:
-    - spring_boot
+    - spring_boot_application
