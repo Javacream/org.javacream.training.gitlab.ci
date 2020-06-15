@@ -25,6 +25,9 @@ test:
 
 deploy:
   stage: deploy
+  artifacts:
+    paths:
+      - org.javacream.training.store.module/target/*.jar
   script:
     - mvn $MAVEN_CLI_OPTS -Dmaven.test.skip deploy
   only:
