@@ -1,5 +1,10 @@
 image: maven:3.6.3-openjdk-8-slim
 
+stages:
+  - build
+  - test
+  - deploy
+  - build-and-deploy-image
 default:
   tags:
     - docker_image
@@ -7,6 +12,9 @@ default:
 variables:
   MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  NEXUS_URL: http://192.168.178.48:8083
+  NEXUS_USER: admin
+  NEXUS_PASSWORD: admin123 
 
 cache:
   paths:
@@ -30,5 +38,13 @@ deploy:
       - org.javacream.training.store.web/target/*.jar
   script:
     - mvn $MAVEN_CLI_OPTS -Dmaven.test.skip deploy
-  only:
-    - spring_boot_application
+
+build_and_deploy_image:
+  stage: build_and_deploy_image
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    -  cp org.javacream.training.store.web/target/*.jar app.jar
+    - echo "{\"auths\":{\"$NEXUS_URL\":{\"username\":\"$NEXUS_USER\",\"password\":\"$NEXUS_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --insecure --destination 192.168.178.48:8083/javacream/test:1.0
