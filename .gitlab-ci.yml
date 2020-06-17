@@ -5,7 +5,7 @@ stages:
 
 job_1a:
   stage: step1
-  script: echo job_1a  
+  script: echo job_1a
 
 job_1b:
   stage: step1
@@ -21,7 +21,8 @@ job_1c:
 job_2a:
   stage: step2
   script: echo job_2a  
-
+  only:
+    - basic_pipeline
 job_2b:
   stage: step2
   script: ego job_2b
