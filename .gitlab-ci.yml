@@ -3,6 +3,16 @@ test_shell:
   tags:
     - shell-scripts
 
+test_native_shell:
+  script: 
+    - echo Hello
+    - java -version
+    - docker --version
+    - docker-compose --version
+  tags:
+    - shell_native_ubuntu
+
+
 test_docker_image:
   image: openjdk:8-alpine
   script: java -version
