@@ -25,7 +25,7 @@ job_2a:
 job_2b:
   stage: step2
   script: ego job_2b
-  allow-failure: true  
+  allow_failure: true  
 
 job_3a:
   stage: step3
@@ -34,4 +34,4 @@ job_3a:
 job_3b:
   stage: step3
   script: ego job_3b
-  allow-failure: true  
+  allow_failure: true  
