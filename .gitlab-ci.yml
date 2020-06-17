@@ -4,7 +4,7 @@ stages:
   - build
   - test
   - deploy
-  - build-and-deploy-image
+  - build_and_deploy_image
 default:
   tags:
     - docker_image
