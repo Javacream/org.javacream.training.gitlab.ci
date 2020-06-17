@@ -34,4 +34,3 @@ job_3a:
 job_3b:
   stage: step3
   script: ego job_3b
-  allow_failure: true  
