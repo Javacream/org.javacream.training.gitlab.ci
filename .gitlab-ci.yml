@@ -1,14 +1,37 @@
-default:
-  tags:
-    - shell-scripts
+stages:
+  - step1
+  - step2
+  - step3
 
-job_for_build:
-  stage: build
-  script: 
-    - echo $CI_COMMIT_MESSAGE executed by $CI_RUNNER_DESCRIPTION
+job_1a:
+  stage: step1
+  script: echo job_1a  
 
-job_for_test:
-  stage: test
-  script: 
-    - echo $CI_COMMIT_MESSAGE executed by $CI_RUNNER_DESCRIPTION
+job_1b:
+  stage: step1
+  script: echo job_1b  
+  only:
+    - /^issue-.*$/
+job_1c:
+  stage: step1
+  script: echo job_1c
+  only:
+    - /^hotfix-.*$/
 
+job_2a:
+  stage: step2
+  script: echo job_2a  
+
+job_2b:
+  stage: step2
+  script: ego job_2b
+  allow-failure: true  
+
+job_3a:
+  stage: step3
+  script: echo job_3a  
+
+job_3b:
+  stage: step3
+  script: ego job_3b
+  allow-failure: true  
