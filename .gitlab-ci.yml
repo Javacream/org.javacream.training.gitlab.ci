@@ -22,7 +22,7 @@ job_2a:
   stage: step2
   script: echo job_2a  
   only:
-    - basic_pipeline
+    - simple_pipeline
 job_2b:
   stage: step2
   script: ego job_2b
