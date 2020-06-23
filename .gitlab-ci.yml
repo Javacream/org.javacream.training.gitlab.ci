@@ -1,8 +1,11 @@
-test_docker-image:
-  image: maven:3-openjdk
+image: maven:3-openjdk
+
+build_with_maven:
   script: 
     - echo Hello
     - java -version
     - mvn -version
+    - docker --version
+  stage: build
   tags:
     - docker_image
