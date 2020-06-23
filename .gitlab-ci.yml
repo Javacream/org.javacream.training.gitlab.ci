@@ -4,4 +4,4 @@ test_docker-image:
     - echo Hello
     - java -version
   tags:
-    - docker-image
+    - docker_image
