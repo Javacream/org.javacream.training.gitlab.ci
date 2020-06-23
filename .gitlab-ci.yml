@@ -1,7 +1,8 @@
 test_docker-image:
-  image: openjdk:8-alpine
+  image: maven:3-openjdk
   script: 
     - echo Hello
     - java -version
+    - mvn -version
   tags:
     - docker_image
