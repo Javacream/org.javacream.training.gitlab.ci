@@ -26,8 +26,7 @@ hello_world_deploy:
     - echo test
   stage: deploy
   tags: 
-    - shell-scripts
-
+    - unknown
 
 hello_world_custom:
   script:
@@ -35,6 +34,5 @@ hello_world_custom:
     - echo test
   stage: custom
   tags: 
-    - shell-scripts
 
   
