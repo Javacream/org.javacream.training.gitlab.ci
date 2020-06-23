@@ -1,8 +1,7 @@
-test_native_shell:
+test_docker-image:
+  image: openjdk:8-alpine
   script: 
     - echo Hello
     - java -version
-    - docker --version
-    - docker-compose --version
   tags:
-    - shell-scripts
+    - docker-image
