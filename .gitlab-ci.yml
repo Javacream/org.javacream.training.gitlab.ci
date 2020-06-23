@@ -5,4 +5,4 @@ test_native_shell:
     - docker --version
     - docker-compose --version
   tags:
-    - shell_native_ubuntu
+    - shell-scripts
