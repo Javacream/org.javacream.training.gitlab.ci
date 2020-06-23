@@ -1,4 +1,11 @@
-hello_world:
+hello_world_build:
   script:
     - echo Hello
-    - echo World
+    - echo build
+  stage: build
+  
+hello_world_test:
+  script:
+    - echo Hello
+    - echo test
+  stage: test
