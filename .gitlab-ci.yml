@@ -1,3 +1,9 @@
+stages:
+  - build
+  - test
+  - custom
+  - deploy
+
 hello_world_build:
   script:
     - echo Hello
@@ -9,3 +15,15 @@ hello_world_test:
     - echo Hello
     - echo test
   stage: test
+  
+hello_world_deploy:
+  script:
+    - echo Hello
+    - echo test
+  stage: deploy
+hello_world_custom:
+  script:
+    - echo Hello
+    - echo test
+  stage: custom
+  
