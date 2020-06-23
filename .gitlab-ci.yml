@@ -9,21 +9,32 @@ hello_world_build:
     - echo Hello
     - echo build
   stage: build
+  tags: 
+    - shell-scripts
   
 hello_world_test:
   script:
     - echo Hello
     - echo test
   stage: test
+  tags: 
+    - shell-scripts
   
 hello_world_deploy:
   script:
     - echo Hello
     - echo test
   stage: deploy
+  tags: 
+    - shell-scripts
+
+
 hello_world_custom:
   script:
     - echo Hello
     - echo test
   stage: custom
+  tags: 
+    - shell-scripts
+
   
