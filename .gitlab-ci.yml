@@ -1,8 +1,3 @@
-test_shell:
-  script: echo Hello
-  tags:
-    - shell-scripts
-
 test_native_shell:
   script: 
     - echo Hello
@@ -11,29 +6,3 @@ test_native_shell:
     - docker-compose --version
   tags:
     - shell_native_ubuntu
-
-
-test_docker_image:
-  image: openjdk:8-alpine
-  script: java -version
-  tags:
-    - docker_image
-
-test_docker_using_host:
-  script: 
-    - docker --version
-    - docker run hello-world
-  tags:
-    - docker_using_host
-
-test_docker_using_dind:
-  variables:
-    DOCKER_TLS_CERTDIR: ""
-  services:
-    - docker:dind
-  script: 
-    - docker --version
-    - docker run hello-world
-  tags:
-    - docker_using_dind
-
