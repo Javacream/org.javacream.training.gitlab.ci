@@ -7,6 +7,8 @@ stages:
 
 docker-build:
   stage: build
+  variables:
+    DOCKER_TLS_CERTDIR: ""
   script:
     - wget -O app.jar "http://192.168.178.48:8081/service/rest/v1/search/assets/download?repository=maven-snapshots&group=org.javacream.training&name=org.javacream.training.store.web&sort=version"
     - docker build -t javacream/storeservice:1.0 .
