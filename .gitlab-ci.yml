@@ -1,4 +1,4 @@
-image: maven:3.6.3-openjdk-8-slim
+image: maven:maven:3-openjdk
 
 default:
   tags:
