@@ -1,11 +1,13 @@
+cache:
+  paths:
+ - ./hello.txt
+
 job1:
-  script: echo Hello > hello.txt
-  cache:
-    paths:
-      - ./hello.txt
+  script: echo Hello > ./hello.txt
+
 
 job2:
-  script: less hello.txt
+  script: less ./hello.txt
   artifacts:
     paths:
       - ./hello.txt
