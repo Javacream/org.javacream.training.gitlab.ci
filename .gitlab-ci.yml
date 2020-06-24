@@ -1,6 +1,6 @@
 cache:
-  paths:
- - ./hello.txt
+  paths: 
+    - ./hello.txt
 
 job1:
   script: echo Hello > ./hello.txt
